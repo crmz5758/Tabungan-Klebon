@@ -1,48 +1,127 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
-  margin: 0;
-  padding: 20px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
+
+body{
+
+    background:#f1f5f9;
+    color:#333;
+
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+
+header{
+
+    background:#18aeb5;
+    color:white;
+    text-align:center;
+    padding:25px;
+
 }
 
-.card {
-  background: #111827;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+header h1{
+    font-size:32px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+header h2{
+    font-weight:normal;
 }
 
-th, td {
-  padding: 12px;
-  border-bottom: 1px solid #374151;
-  text-align: left;
+
+
+.container{
+
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+
 }
 
-th {
-  background: #1f2937;
+
+
+.card-total{
+
+    background:#18aeb5;
+    color:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    margin-bottom:25px;
+
 }
 
-tr:hover {
-  background: #1f2937;
+
+.card-total h3{
+
+    font-size:22px;
+
 }
 
-tfoot td {
-  font-weight: bold;
-  background: #0b1220;
+
+.card-total p{
+
+    font-size:35px;
+    font-weight:bold;
+    margin-top:10px;
+
+}
+
+
+
+.table-box{
+
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px #ccc;
+
+}
+
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+th{
+
+    background:#18aeb5;
+    color:white;
+    padding:12px;
+
+}
+
+
+td{
+
+    padding:12px;
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+tr:hover{
+
+    background:#e8ffff;
+
+}
+
+
+footer{
+
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+    background:#18aeb5;
+    color:white;
+
 }
