@@ -33,7 +33,7 @@ function hitungSaldo(data){
 
     let total = data.reduce(
 
-        (jumlah,item) => jumlah + item.nominal,
+        (jumlah,item)=> jumlah + item.nominal,
 
         0
 
@@ -46,6 +46,7 @@ function hitungSaldo(data){
 
 
 }
+
 
 
 
@@ -69,17 +70,22 @@ function tampilData(data){
 
         <tr>
 
-        <td colspan="3">
-        Data tidak ditemukan
-        </td>
+            <td colspan="3" style="text-align:center">
+
+                Data tidak ditemukan
+
+            </td>
 
         </tr>
 
         `;
 
+
         return;
 
     }
+
+
 
 
 
@@ -91,13 +97,20 @@ function tampilData(data){
 
         <tr>
 
-        <td>${index+1}</td>
+            <td>
+                ${index + 1}
+            </td>
 
-        <td>${item.nama}</td>
 
-        <td>
-        Rp ${item.nominal.toLocaleString("id-ID")}
-        </td>
+            <td>
+                ${item.nama}
+            </td>
+
+
+            <td>
+                Rp ${item.nominal.toLocaleString("id-ID")}
+            </td>
+
 
         </tr>
 
@@ -108,6 +121,8 @@ function tampilData(data){
 
 
 }
+
+
 
 
 
@@ -124,8 +139,11 @@ document
 
     let hasil = semuaData.filter(item =>
 
-        item.nama.toLowerCase()
+
+        item.nama
+        .toLowerCase()
         .includes(keyword)
+
 
     );
 
