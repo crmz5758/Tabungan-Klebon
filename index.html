@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tabungan Dusun Klebon</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabungan Pemuda Pemudi Dusun Klebon</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>Tabungan Pemuda Pemudi Dusun Klebon</h1>
+<header>
+    <h1>Tabungan Pemuda Pemudi</h1>
+    <h2>Dusun Klebon</h2>
+</header>
 
-    <div class="card">
-      <table>
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Nama</th>
-            <th>Total Tabungan</th>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="2"><b>Total Keseluruhan</b></td>
-            <td id="grand-total">0</td>
-          </tr>
-        </tfoot>
-      </table>
+
+<section class="container">
+
+    <div class="card-total">
+        <h3>Total Tabungan</h3>
+        <p id="total">Rp 0</p>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+
+    <div class="table-box">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Nominal</th>
+                </tr>
+            </thead>
+
+            <tbody id="dataTabungan">
+                
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+    © 2026 Pemuda Pemudi Dusun Klebon
+</footer>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
