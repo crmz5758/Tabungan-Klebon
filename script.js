@@ -1,69 +1,133 @@
-let semuaData=[];
+let semuaData = [];
 
+
+// AMBIL DATA JSON
 
 fetch("data.json")
-.then(res=>res.json())
-.then(data=>{
 
-    semuaData=data.anggota;
+.then(response => response.json())
 
-    document.getElementById("update").innerHTML=
-    "Update terakhir : "+data.update;
+.then(data => {
 
 
-    document.getElementById("jumlah").innerHTML=
-    semuaData.length+" Orang";
+    semuaData = data.anggota;
 
 
-    let total=semuaData.reduce((a,b)=>a+b.nominal,0);
+    // update terakhir
+
+    document.getElementById("update").innerHTML = data.update;
 
 
-    document.getElementById("saldo").innerHTML=
-    "Rp "+total.toLocaleString("id-ID");
+
+    // total orang
+
+    document.getElementById("jumlah").innerHTML =
+    semuaData.length + " Orang";
 
 
-    tampil(semuaData);
 
-});
+    // total saldo
 
-
-function tampil(data){
-
-let tabel=document.getElementById("data");
-
-tabel.innerHTML="";
+    hitungSaldo(semuaData);
 
 
-data.forEach((item,index)=>{
 
-tabel.innerHTML+=`
+    // tampil tabel
 
-<tr>
-<td>${index+1}</td>
-<td>${item.nama}</td>
-<td>Rp ${item.nominal.toLocaleString("id-ID")}</td>
-</tr>
+    tampilData(semuaData);
 
-`;
 
 });
+
+
+
+
+
+// HITUNG SALDO
+
+function hitungSaldo(data){
+
+
+    let total = data.reduce(
+        (jumlah,item)=> jumlah + item.nominal,
+        0
+    );
+
+
+    document.getElementById("saldo").innerHTML =
+    "Rp " + total.toLocaleString("id-ID");
+
 
 }
 
 
 
-document.getElementById("search")
+
+
+// TAMPIL DATA
+
+function tampilData(data){
+
+
+    let tabel = document.getElementById("data");
+
+
+    tabel.innerHTML = "";
+
+
+
+    data.forEach((item,index)=>{
+
+
+        tabel.innerHTML += `
+
+        <tr>
+
+            <td>${index+1}</td>
+
+            <td>${item.nama}</td>
+
+            <td>
+            Rp ${item.nominal.toLocaleString("id-ID")}
+            </td>
+
+        </tr>
+
+        `;
+
+
+    });
+
+
+}
+
+
+
+
+
+// SEARCH NAMA
+
+document
+.getElementById("search")
 .addEventListener("keyup",function(){
 
-let keyword=this.value.toLowerCase();
+
+    let keyword = this.value.toLowerCase();
 
 
-let hasil=semuaData.filter(item=>
-item.nama.toLowerCase().includes(keyword)
-);
+
+    let hasil = semuaData.filter(item =>
+
+        item.nama
+        .toLowerCase()
+        .includes(keyword)
+
+    );
 
 
-tampil(hasil);
+
+    tampilData(hasil);
+
 
 
 });
