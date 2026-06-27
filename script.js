@@ -1,3 +1,5 @@
+const API_URL = "https://script.google.com/macros/s/AKfycbwPWEHzyDgVo4Jplk-jMWfGxixRRpYfNLWLuX3cnxopvvBCkq4xmpaZE2rbKWKgpM0/exec";
+
 let semuaAnggota = [];
 
 const totalAnggota = document.getElementById("totalAnggota");
@@ -7,7 +9,7 @@ const search = document.getElementById("search");
 const tanggal = document.getElementById("tanggal");
 
 function rupiah(angka) {
-    return "Rp" + angka.toLocaleString("id-ID");
+    return "Rp" + Number(angka).toLocaleString("id-ID");
 }
 
 function renderTable(data) {
@@ -15,23 +17,21 @@ function renderTable(data) {
     tableBody.innerHTML = "";
 
     if (data.length === 0) {
-
         tableBody.innerHTML = `
             <tr>
-                <td colspan="3" style="text-align:center;padding:30px;">
+                <td colspan="3" style="text-align:center;padding:30px">
                     Data tidak ditemukan
                 </td>
             </tr>
         `;
-
         return;
     }
 
-    data.forEach((item, index) => {
+    data.forEach(item => {
 
         tableBody.innerHTML += `
             <tr>
-                <td>${index + 1}</td>
+                <td>${item.no}</td>
                 <td>${item.nama}</td>
                 <td>${rupiah(item.saldo)}</td>
             </tr>
@@ -41,34 +41,44 @@ function renderTable(data) {
 
 }
 
-fetch("data.json")
-.then(res => res.json())
-.then(data => {
+async function loadData() {
 
-    semuaAnggota = data.anggota;
+    try {
 
-    tanggal.textContent =
-        "Update terakhir : " + data.updateTerakhir;
+        const response = await fetch(API_URL);
+        const data = await response.json();
 
-    totalAnggota.textContent =
-        semuaAnggota.length;
+        semuaAnggota = data.anggota;
 
-    const total = semuaAnggota.reduce((sum, item) => {
+        tanggal.textContent =
+            "Update Terakhir : " +
+            new Date(data.updateTerakhir).toLocaleDateString("id-ID", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
 
-        return sum + item.saldo;
+        totalAnggota.textContent = semuaAnggota.length;
 
-    }, 0);
+        const total = semuaAnggota.reduce((a, b) => a + Number(b.saldo), 0);
 
-    totalSaldo.textContent =
-        rupiah(total);
+        totalSaldo.textContent = rupiah(total);
 
-    renderTable(semuaAnggota);
+        renderTable(semuaAnggota);
 
-});
+    } catch (err) {
 
-search.addEventListener("keyup", function () {
+        console.error(err);
 
-    const keyword = this.value.toLowerCase();
+        tanggal.textContent = "Gagal mengambil data.";
+
+    }
+
+}
+
+search.addEventListener("input", () => {
+
+    const keyword = search.value.toLowerCase();
 
     const hasil = semuaAnggota.filter(item =>
         item.nama.toLowerCase().includes(keyword)
@@ -77,3 +87,5 @@ search.addEventListener("keyup", function () {
     renderTable(hasil);
 
 });
+
+loadData();
