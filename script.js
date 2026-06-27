@@ -1,24 +1,5 @@
 let semuaData = [];
 
-fetch("data.json")
-.then(response => response.json())
-.then(data => {
-
-    semuaData = data.anggota;
-
-    updateWaktu();
-
-    setInterval(updateWaktu,1000);
-
-    document.getElementById("jumlah").innerHTML =
-    semuaData.length + " Orang";
-
-    hitungSaldo(semuaData);
-
-    tampilData(semuaData);
-
-});
-
 
 function updateWaktu(){
 
@@ -30,13 +11,38 @@ function updateWaktu(){
 }
 
 
+updateWaktu();
+
+setInterval(updateWaktu,1000);
+
+
+
+fetch("data.json")
+.then(response => response.json())
+.then(data => {
+
+    semuaData = data.anggota;
+
+    document.getElementById("jumlah").innerHTML =
+    semuaData.length + " Orang";
+
+
+    hitungSaldo(semuaData);
+
+
+    tampilData(semuaData);
+
+});
+
+
 
 function hitungSaldo(data){
 
     let total = data.reduce(
-        (jumlah,item)=> jumlah + item.nominal,
+        (sum,item)=> sum + item.nominal,
         0
     );
+
 
     document.getElementById("saldo").innerHTML =
     "Rp " + total.toLocaleString("id-ID");
@@ -49,7 +55,22 @@ function tampilData(data){
 
     let tabel = document.getElementById("data");
 
-    tabel.innerHTML="";
+    tabel.innerHTML = "";
+
+
+    if(data.length === 0){
+
+        tabel.innerHTML = `
+        <tr>
+            <td colspan="3">
+            Data tidak ditemukan
+            </td>
+        </tr>
+        `;
+
+        return;
+
+    }
 
 
     data.forEach((item,index)=>{
@@ -70,17 +91,23 @@ function tampilData(data){
 
 
 
-document.getElementById("search")
-.addEventListener("keyup",function(){
+document
+.getElementById("search")
+.addEventListener("input",function(){
+
 
     let keyword = this.value.toLowerCase();
 
 
     let hasil = semuaData.filter(item =>
-        item.nama.toLowerCase().includes(keyword)
+
+        item.nama.toLowerCase()
+        .includes(keyword)
+
     );
 
 
     tampilData(hasil);
+
 
 });
