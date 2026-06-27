@@ -1,48 +1,6 @@
 let semuaData = [];
 
 
-// JAM REALTIME
-
-function updateWaktu(){
-
-    let waktu = new Date();
-
-
-    let tanggal = waktu.toLocaleDateString(
-        "id-ID",
-        {
-            day:"2-digit",
-            month:"long",
-            year:"numeric"
-        }
-    );
-
-
-    let jam = waktu.toLocaleTimeString(
-        "id-ID",
-        {
-            hour:"2-digit",
-            minute:"2-digit",
-            second:"2-digit"
-        }
-    );
-
-
-    document.getElementById("update").innerHTML =
-    tanggal + " | " + jam;
-
-}
-
-
-updateWaktu();
-
-setInterval(updateWaktu,1000);
-
-
-
-
-
-// LOAD DATA
 
 fetch("data.json")
 
@@ -70,19 +28,16 @@ fetch("data.json")
 
 
 
-// HITUNG TOTAL SALDO
-
 function hitungSaldo(data){
 
 
     let total = data.reduce(
 
-        (jumlah,item)=> jumlah + item.nominal,
+        (jumlah,item) => jumlah + item.nominal,
 
         0
 
     );
-
 
 
     document.getElementById("saldo").innerHTML =
@@ -96,7 +51,6 @@ function hitungSaldo(data){
 
 
 
-// TAMPIL TABEL
 
 function tampilData(data){
 
@@ -115,20 +69,17 @@ function tampilData(data){
 
         <tr>
 
-            <td colspan="3">
-                Data tidak ditemukan
-            </td>
+        <td colspan="3">
+        Data tidak ditemukan
+        </td>
 
         </tr>
 
         `;
 
-
         return;
 
-
     }
-
 
 
 
@@ -138,26 +89,17 @@ function tampilData(data){
 
         tabel.innerHTML += `
 
-
         <tr>
 
-            <td>
-                ${index + 1}
-            </td>
+        <td>${index+1}</td>
 
+        <td>${item.nama}</td>
 
-            <td>
-                ${item.nama}
-            </td>
-
-
-            <td>
-                Rp ${item.nominal.toLocaleString("id-ID")}
-            </td>
-
+        <td>
+        Rp ${item.nominal.toLocaleString("id-ID")}
+        </td>
 
         </tr>
-
 
         `;
 
@@ -171,8 +113,6 @@ function tampilData(data){
 
 
 
-// SEARCH NAMA
-
 document
 .getElementById("search")
 .addEventListener("input",function(){
@@ -184,11 +124,8 @@ document
 
     let hasil = semuaData.filter(item =>
 
-
-        item.nama
-        .toLowerCase()
+        item.nama.toLowerCase()
         .includes(keyword)
-
 
     );
 
