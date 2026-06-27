@@ -1,24 +1,44 @@
-fetch('data.json')
-  .then(res => res.json())
-  .then(data => {
-    const tbody = document.getElementById('table-body');
-    const totalEl = document.getElementById('grand-total');
+fetch("data.json")
 
-    let grandTotal = 0;
+.then(response => response.json())
 
-    data.data.forEach(item => {
-      grandTotal += item.total;
+.then(data => {
 
-      const row = `
+
+    // tampil total
+
+    document.getElementById("total").innerHTML =
+    "Rp " + data.total.toLocaleString("id-ID");
+
+
+
+    let tabel = document.getElementById("dataTabungan");
+
+
+    data.anggota.forEach((item,index)=>{
+
+
+        let row = `
+
         <tr>
-          <td>${item.no}</td>
-          <td>${item.nama}</td>
-          <td>Rp ${item.total.toLocaleString('id-ID')}</td>
-        </tr>
-      `;
 
-      tbody.innerHTML += row;
+            <td>${index+1}</td>
+
+            <td>${item.nama}</td>
+
+            <td>
+            Rp ${item.nominal.toLocaleString("id-ID")}
+            </td>
+
+        </tr>
+
+        `;
+
+
+        tabel.innerHTML += row;
+
+
     });
 
-    totalEl.innerText = `Rp ${grandTotal.toLocaleString('id-ID')}`;
-  });
+
+});
