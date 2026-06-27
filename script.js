@@ -1,13 +1,11 @@
 let semuaData = [];
 
 
-
 fetch("data.json")
 
 .then(response => response.json())
 
 .then(data => {
-
 
     semuaData = data.anggota;
 
@@ -21,15 +19,11 @@ fetch("data.json")
 
     tampilData(semuaData);
 
-
 });
 
 
 
-
-
 function hitungSaldo(data){
-
 
     let total = data.reduce(
 
@@ -41,51 +35,20 @@ function hitungSaldo(data){
 
 
     document.getElementById("saldo").innerHTML =
-
     "Rp " + total.toLocaleString("id-ID");
-
 
 }
 
 
 
-
-
-
 function tampilData(data){
 
-
     let tabel = document.getElementById("data");
-
 
     tabel.innerHTML = "";
 
 
-
-    if(data.length === 0){
-
-
-        tabel.innerHTML = `
-
-        <tr>
-
-        <td colspan="3">
-        Data tidak ditemukan
-        </td>
-
-        </tr>
-
-        `;
-
-        return;
-
-    }
-
-
-
-
     data.forEach((item,index)=>{
-
 
         tabel.innerHTML += `
 
@@ -103,13 +66,9 @@ function tampilData(data){
 
         `;
 
-
     });
 
-
 }
-
-
 
 
 
@@ -121,14 +80,12 @@ document
     let keyword = this.value.toLowerCase();
 
 
-
     let hasil = semuaData.filter(item =>
 
         item.nama.toLowerCase()
         .includes(keyword)
 
     );
-
 
 
     tampilData(hasil);
