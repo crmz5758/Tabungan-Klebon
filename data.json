@@ -3,14 +3,76 @@
   "updateTerakhir": "27 Juni 2026",
   "anggota": [
     {
-      "no": 1,
       "nama": "Alma",
       "saldo": 20000
     },
     {
-      "no": 2,
       "nama": "Angga",
       "saldo": 10000
+    },
+    {
+      "nama": "Ari",
+      "saldo": 15000
+    },
+    {
+      "nama": "Arif",
+      "saldo": 50000
+    },
+    {
+      "nama": "Bowo",
+      "saldo": 0
+    },
+    {
+      "nama": "Cahyo",
+      "saldo": 40000
+    },
+    {
+      "nama": "Devan",
+      "saldo": 20000
+    },
+    {
+      "nama": "Febri",
+      "saldo": 110000
+    },
+    {
+      "nama": "Lanjar W",
+      "saldo": 20000
+    },
+    {
+      "nama": "Malik",
+      "saldo": 145000
+    },
+    {
+      "nama": "Nanda",
+      "saldo": 20000
+    },
+    {
+      "nama": "Nandar",
+      "saldo": 20000
+    },
+    {
+      "nama": "Rini",
+      "saldo": 40000
+    },
+    {
+      "nama": "Samadi",
+      "saldo": 70000
+    },
+    {
+      "nama": "Suryanto",
+      "saldo": 0
+    },
+    {
+      "nama": "Tesa",
+      "saldo": 35000
+    },
+    {
+      "nama": "Yudi",
+      "saldo": 10000
+    },
+    {
+      "nama": "Yuli",
+      "saldo": 110000
     }
   ]
 }
