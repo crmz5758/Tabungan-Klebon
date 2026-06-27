@@ -1,0 +1,18 @@
+{
+  "organisasi": "Pemuda Pemudi Dusun Klebon",
+  "updateTerakhir": "27 Juni 2026",
+  "anggota": [
+    {
+      "nama": "Andi",
+      "saldo": 150000
+    },
+    {
+      "nama": "Budi",
+      "saldo": 225000
+    },
+    {
+      "nama": "Citra",
+      "saldo": 100000
+    }
+  ]
+}
