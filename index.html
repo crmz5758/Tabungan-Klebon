@@ -12,55 +12,109 @@
 <body>
 
 <header>
+
     <h1>Tabungan Pemuda Pemudi</h1>
     <h2>Dusun Klebon</h2>
-    <p id="update"></p>
+
+    <div class="update">
+        Update terakhir : <span id="update"></span>
+    </div>
+
 </header>
 
 
-<div class="container">
 
-    <div class="summary">
+<main class="container">
 
-        <div class="box">
-            <h3>Total Penabung</h3>
-            <b id="jumlah"></b>
-        </div>
 
-        <div class="box">
-            <h3>Total Saldo</h3>
-            <b id="saldo"></b>
-        </div>
+<section class="cards">
 
+
+<div class="card">
+
+    <div class="icon">
+        👥
     </div>
 
-
-    <input 
-    type="text" 
-    id="search" 
-    placeholder="Cari nama..."
-    >
-
-
-    <table>
-
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Nominal</th>
-            </tr>
-        </thead>
-
-        <tbody id="data"></tbody>
-
-    </table>
-
+    <div>
+        <p>Total</p>
+        <h2 id="jumlah"></h2>
+    </div>
 
 </div>
+
+
+
+<div class="card">
+
+    <div class="icon">
+        💰
+    </div>
+
+    <div>
+        <p>Total Saldo</p>
+        <h2 id="saldo"></h2>
+    </div>
+
+</div>
+
+
+</section>
+
+
+
+<div class="search-box">
+
+<input 
+type="text"
+id="search"
+placeholder="Cari nama..."
+>
+
+</div>
+
+
+
+
+<div class="table-card">
+
+<table>
+
+
+<thead>
+
+<tr>
+<th>No</th>
+<th>Nama</th>
+<th>Nominal</th>
+</tr>
+
+</thead>
+
+
+<tbody id="data">
+
+</tbody>
+
+
+</table>
+
+</div>
+
+
+</main>
+
+
+
+<footer>
+
+© 2026 Pemuda Pemudi Dusun Klebon
+
+</footer>
 
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
