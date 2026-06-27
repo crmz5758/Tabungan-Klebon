@@ -1,77 +1,23 @@
 {
-    "total": 735000,
-    "anggota": [
-        {
-            "nama": "Alma",
-            "nominal": 20000
-        },
-        {
-            "nama": "Angga",
-            "nominal": 10000
-        },
-        {
-            "nama": "Ari",
-            "nominal": 15000
-        },
-        {
-            "nama": "Arif",
-            "nominal": 50000
-        },
-        {
-            "nama": "Bowo",
-            "nominal": 0
-        },
-        {
-            "nama": "Cahyo",
-            "nominal": 40000
-        },
-        {
-            "nama": "Devan",
-            "nominal": 20000
-        },
-        {
-            "nama": "Febri",
-            "nominal": 110000
-        },
-        {
-            "nama": "Lanjar W",
-            "nominal": 20000
-        },
-        {
-            "nama": "Malik",
-            "nominal": 145000
-        },
-        {
-            "nama": "Nanda",
-            "nominal": 20000
-        },
-        {
-            "nama": "Nandar",
-            "nominal": 20000
-        },
-        {
-            "nama": "Rini",
-            "nominal": 40000
-        },
-        {
-            "nama": "Samadi",
-            "nominal": 70000
-        },
-        {
-            "nama": "Suryanto",
-            "nominal": 0
-        },
-        {
-            "nama": "Tesa",
-            "nominal": 35000
-        },
-        {
-            "nama": "Yudi",
-            "nominal": 10000
-        },
-        {
-            "nama": "Yuli",
-            "nominal": 110000
-        }
+    "update":"28 Juni 2026",
+    "anggota":[
+        {"nama":"Alma","nominal":20000},
+        {"nama":"Angga","nominal":10000},
+        {"nama":"Ari","nominal":15000},
+        {"nama":"Arif","nominal":50000},
+        {"nama":"Bowo","nominal":0},
+        {"nama":"Cahyo","nominal":40000},
+        {"nama":"Devan","nominal":20000},
+        {"nama":"Febri","nominal":110000},
+        {"nama":"Lanjar W","nominal":20000},
+        {"nama":"Malik","nominal":145000},
+        {"nama":"Nanda","nominal":20000},
+        {"nama":"Nandar","nominal":20000},
+        {"nama":"Rini","nominal":40000},
+        {"nama":"Samadi","nominal":70000},
+        {"nama":"Suryanto","nominal":0},
+        {"nama":"Tesa","nominal":35000},
+        {"nama":"Yudi","nominal":10000},
+        {"nama":"Yuli","nominal":110000}
     ]
 }
