@@ -1,44 +1,69 @@
+let semuaData=[];
+
+
 fetch("data.json")
+.then(res=>res.json())
+.then(data=>{
 
-.then(response => response.json())
+    semuaData=data.anggota;
 
-.then(data => {
-
-
-    // tampil total
-
-    document.getElementById("total").innerHTML =
-    "Rp " + data.total.toLocaleString("id-ID");
+    document.getElementById("update").innerHTML=
+    "Update terakhir : "+data.update;
 
 
-
-    let tabel = document.getElementById("dataTabungan");
-
-
-    data.anggota.forEach((item,index)=>{
+    document.getElementById("jumlah").innerHTML=
+    semuaData.length+" Orang";
 
 
-        let row = `
-
-        <tr>
-
-            <td>${index+1}</td>
-
-            <td>${item.nama}</td>
-
-            <td>
-            Rp ${item.nominal.toLocaleString("id-ID")}
-            </td>
-
-        </tr>
-
-        `;
+    let total=semuaData.reduce((a,b)=>a+b.nominal,0);
 
 
-        tabel.innerHTML += row;
+    document.getElementById("saldo").innerHTML=
+    "Rp "+total.toLocaleString("id-ID");
 
 
-    });
+    tampil(semuaData);
+
+});
+
+
+function tampil(data){
+
+let tabel=document.getElementById("data");
+
+tabel.innerHTML="";
+
+
+data.forEach((item,index)=>{
+
+tabel.innerHTML+=`
+
+<tr>
+<td>${index+1}</td>
+<td>${item.nama}</td>
+<td>Rp ${item.nominal.toLocaleString("id-ID")}</td>
+</tr>
+
+`;
+
+});
+
+}
+
+
+
+document.getElementById("search")
+.addEventListener("keyup",function(){
+
+let keyword=this.value.toLowerCase();
+
+
+let hasil=semuaData.filter(item=>
+item.nama.toLowerCase().includes(keyword)
+);
+
+
+tampil(hasil);
 
 
 });
