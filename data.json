@@ -1,78 +1,23 @@
 {
-  "organisasi": "Pemuda Pemudi Dusun Klebon",
-  "updateTerakhir": "27 Juni 2026",
-  "anggota": [
-    {
-      "nama": "Alma",
-      "saldo": 20000
-    },
-    {
-      "nama": "Angga",
-      "saldo": 10000
-    },
-    {
-      "nama": "Ari",
-      "saldo": 15000
-    },
-    {
-      "nama": "Arif",
-      "saldo": 50000
-    },
-    {
-      "nama": "Bowo",
-      "saldo": 0
-    },
-    {
-      "nama": "Cahyo",
-      "saldo": 40000
-    },
-    {
-      "nama": "Devan",
-      "saldo": 20000
-    },
-    {
-      "nama": "Febri",
-      "saldo": 110000
-    },
-    {
-      "nama": "Lanjar W",
-      "saldo": 20000
-    },
-    {
-      "nama": "Malik",
-      "saldo": 145000
-    },
-    {
-      "nama": "Nanda",
-      "saldo": 20000
-    },
-    {
-      "nama": "Nandar",
-      "saldo": 20000
-    },
-    {
-      "nama": "Rini",
-      "saldo": 40000
-    },
-    {
-      "nama": "Samadi",
-      "saldo": 70000
-    },
-    {
-      "nama": "Suryanto",
-      "saldo": 0
-    },
-    {
-      "nama": "Tesa",
-      "saldo": 35000
-    },
-    {
-      "nama": "Yudi",
-      "saldo": 10000
-    },
-    {
-      "nama": "Yuli",
-      "saldo": 110000
-    }
+  "title": "Tabungan Pemuda Pemudi Dusun Klebon",
+  "data": [
+    { "no": 1, "nama": "Alma", "total": 20000 },
+    { "no": 2, "nama": "Angga", "total": 10000 },
+    { "no": 3, "nama": "Ari", "total": 15000 },
+    { "no": 4, "nama": "Arif", "total": 50000 },
+    { "no": 5, "nama": "Bowo", "total": 0 },
+    { "no": 6, "nama": "Cahyo", "total": 40000 },
+    { "no": 7, "nama": "Devan", "total": 20000 },
+    { "no": 8, "nama": "Febri", "total": 110000 },
+    { "no": 9, "nama": "Lanjar W", "total": 20000 },
+    { "no": 10, "nama": "Malik", "total": 145000 },
+    { "no": 11, "nama": "Nanda", "total": 20000 },
+    { "no": 12, "nama": "Nandar", "total": 20000 },
+    { "no": 13, "nama": "Rini", "total": 40000 },
+    { "no": 14, "nama": "Samadi", "total": 70000 },
+    { "no": 15, "nama": "Suryanto", "total": 0 },
+    { "no": 16, "nama": "Tesa", "total": 35000 },
+    { "no": 17, "nama": "Yudi", "total": 10000 },
+    { "no": 18, "nama": "Yuli", "total": 110000 }
   ]
 }
