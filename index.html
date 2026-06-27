@@ -4,7 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Tabungan Pemuda Pemudi Dusun Klebon</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,25 +20,76 @@
 
     <div class="container">
 
-        <h1>Tabungan Pemuda Pemudi Dusun Klebon</h1>
+        <header>
 
-        <p class="subtitle">
-            Sistem Informasi Tabungan Anggota
-        </p>
+            <h1>Pemuda Pemudi Dusun Klebon</h1>
 
-        <div class="cards">
+            <p id="tanggal">
+                Memuat...
+            </p>
+
+        </header>
+
+        <section class="cards">
 
             <div class="card">
-                <h3>Total Anggota</h3>
+
+                <span>Total Anggota</span>
+
                 <h2 id="totalAnggota">0</h2>
+
             </div>
 
             <div class="card">
-                <h3>Total Tabungan</h3>
+
+                <span>Total Tabungan</span>
+
                 <h2 id="totalSaldo">Rp0</h2>
+
             </div>
 
-        </div>
+        </section>
+
+        <section class="searchBox">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Cari nama anggota...">
+
+        </section>
+
+        <section class="tableBox">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th width="60">No</th>
+
+                        <th>Nama</th>
+
+                        <th width="170">Total Tabungan</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="tableBody">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <footer>
+
+            © 2026 Pemuda Pemudi Dusun Klebon
+
+        </footer>
 
     </div>
 
